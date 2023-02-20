@@ -1,4 +1,4 @@
-name: grpc-gen-dart
+name: digi-lab-io-k8s-cli-tools
 
 on:
   push:
