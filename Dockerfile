@@ -18,7 +18,8 @@ RUN set -x && OS="$(uname | tr '[:upper:]' '[:lower:]')" && \
       curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${krew_version}.tar.gz" &&  \
       tar zxvf "${krew_version}.tar.gz" && \
       ./"${krew_version}" install krew
-
 RUN echo "export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH" >> /root/.bashrc
+ENV PATH=/root/.krew:/root/.krew/bin:$PATH
+
 RUN source /root/.bashrc && kubectl krew install slice
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash

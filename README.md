@@ -11,7 +11,7 @@ Includes kubectl and in addition:
 ### Docker
 
 ```bash
-docker run --rm -v $(pwd):/k8s-cli-tools ghcr.io/digi-lab-io/digi-lab-io-k8s-cli-tools:latest kubectl slice --help
-docker run --rm -v $(pwd):/k8s-cli-tools ghcr.io/digi-lab-io/digi-lab-io-k8s-cli-tools:latest kubectl-slice --help
-docker run --rm -v $(pwd):/k8s-cli-tools ghcr.io/digi-lab-io/digi-lab-io-k8s-cli-tools:latest kustomize --help
+nerdctl run -it --rm ghcr.io/digi-lab-io/digi-lab-io-k8s-cli-tools:latest kubectl slice --help
+nerdctl run -it --rm ghcr.io/digi-lab-io/digi-lab-io-k8s-cli-tools:latest kubectl-slice --help
+nerdctl run -it --rm ghcr.io/digi-lab-io/digi-lab-io-k8s-cli-tools:latest kustomize --help
 ```
