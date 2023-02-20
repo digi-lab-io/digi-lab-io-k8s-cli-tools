@@ -33,13 +33,13 @@ push:
 	@echo "Pushed ${IMAGE_TAG_LATEST}"
 
 bump-patch:
-	@echo "Bumping patch version from $(DIGI_LAB_IO_K8S_CLI_VERSION) to $$(echo $(CI_CD_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)"
-	@sed -i "" "s/grpc_gen_version: $(DIGI_LAB_IO_K8S_CLI_VERSION)/grpc_gen_version: $$(echo $(CI_CD_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)/g" version.yaml
+	@echo "Bumping patch version from $(DIGI_LAB_IO_K8S_CLI_VERSION) to $$(echo $(DIGI_LAB_IO_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)"
+	@sed -i "" "s/digi_lab_io_k8s_cli_version: $(DIGI_LAB_IO_K8S_CLI_VERSION)/digi_lab_io_k8s_cli_version: $$(echo $(DIGI_LAB_IO_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)/g" version.yaml
 
 bump-minor:
-	@echo "Bumping minor version from $(DIGI_LAB_IO_K8S_CLI_VERSION) to $$(echo $(CI_CD_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)"
-	@sed -i "" "s/grpc_gen_version: $(DIGI_LAB_IO_K8S_CLI_VERSION)/grpc_gen_version: $$(echo $(CI_CD_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)/g" version.yaml
+	@echo "Bumping minor version from $(DIGI_LAB_IO_K8S_CLI_VERSION) to $$(echo $(DIGI_LAB_IO_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)"
+	@sed -i "" "s/digi_lab_io_k8s_cli_version: $(DIGI_LAB_IO_K8S_CLI_VERSION)/digi_lab_io_k8s_cli_version: $$(echo $(DIGI_LAB_IO_K8S_CLI_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)/g" version.yaml
 
 bump-major:
-	@echo "Bumping major version from $(DIGI_LAB_IO_K8S_CLI_VERSION) to $$(echo $(CI_CD_K8S_CLI_VERSION) | awk -F. '{$$1=$$1+1; $$2=0; $$3=0;} 1' OFS=.)"
-	@sed -i "" "s/grpc_gen_version: $(DIGI_LAB_IO_K8S_CLI_VERSION)/grpc_gen_version: $$(echo $(CI_CD_K8S_CLI_VERSION) | awk -F. '{$$1=$$1+1; $$2=0; $$3=0;} 1' OFS=.)/g" version.yaml
+	@echo "Bumping major version from $(DIGI_LAB_IO_K8S_CLI_VERSION) to $$(echo $(DIGI_LAB_IO_K8S_CLI_VERSION) | awk -F. '{$$1=$$1+1; $$2=0; $$3=0;} 1' OFS=.)"
+	@sed -i "" "s/digi_lab_io_k8s_cli_version: $(DIGI_LAB_IO_K8S_CLI_VERSION)/digi_lab_io_k8s_cli_version: $$(echo $(DIGI_LAB_IO_K8S_CLI_VERSION) | awk -F. '{$$1=$$1+1; $$2=0; $$3=0;} 1' OFS=.)/g" version.yaml
