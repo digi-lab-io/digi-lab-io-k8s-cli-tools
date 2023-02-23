@@ -8,7 +8,10 @@ ARG kubernetes_release_version
 ARG krew_version
 
 WORKDIR /bin
-RUN zypper -n install curl tar gzip git jq
+RUN zypper -n install curl tar gzip git jq wget
+RUN VERSION=v4.2.0; BINARY=yq_linux_${arch} && \
+    wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - |\
+    tar xz && mv ${BINARY} /usr/bin/yq
 RUN set -x && curl -fsSLO https://storage.googleapis.com/kubernetes-release/release/${kubernetes_release_version}/bin/linux/${arch}/kubectl
 RUN chmod +x kubectl
 RUN set -x && OS="$(uname | tr '[:upper:]' '[:lower:]')" && \
