@@ -1,5 +1,5 @@
 kubernetes_release_version: v1.23.7
 suse_bci_base_version: 15.4.27.14.35
-digi_lab_io_k8s_cli_version: 1.0.4
+digi_lab_io_k8s_cli_version: 1.1.0
 krew_version: "v0.4.3"
 arch: amd64 # amd64, arm64, s390x

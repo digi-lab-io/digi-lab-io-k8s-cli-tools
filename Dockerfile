@@ -8,7 +8,7 @@ ARG kubernetes_release_version
 ARG krew_version
 
 WORKDIR /bin
-RUN zypper -n install curl tar gzip git
+RUN zypper -n install curl tar gzip git jq
 RUN set -x && curl -fsSLO https://storage.googleapis.com/kubernetes-release/release/${kubernetes_release_version}/bin/linux/${arch}/kubectl
 RUN chmod +x kubectl
 RUN set -x && OS="$(uname | tr '[:upper:]' '[:lower:]')" && \
